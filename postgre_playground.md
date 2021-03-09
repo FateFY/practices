@@ -52,60 +52,60 @@ Return - last week                  | Return of this stock last week
 
 Property                            | Description                                                               
 ------------------------------------|-------------------------------------------------------------------------------
-DriveId                             |unique gdrive file id for the flashnote file
-FileName                            |Full file name of flashnote file
-Subject                             |Extracted subject of flashnote file
-Body                                |html-content body of flashnote
-AccessedAt                          |the processing time of the flashnote file
-TimestampAEST                       |published aest time 
-TimestampUTC                        |published utc time
+DriveId                             | unique gdrive file id for the flashnote file
+FileName                            | Full file name of flashnote file
+Subject                             | Extracted subject of flashnote file
+Body                                | html-content body of flashnote
+AccessedAt                          | the processing time of the flashnote file
+TimestampAEST                       | released aest time 
+TimestampUTC                        | released utc time
 
 
 ### FlashNoteViewModel
 
 Property                            | Description                                                               
 ------------------------------------|-------------------------------------------------------------------------------
-Id                                  |
-Title                               |
-PricePrediction                     |
-Ticker                              |
-Analyst                             |
-NoteType                            |
-DateTime                            |
-ReleaseTimeCategory                 |
-Recommendation                      |
+Id                                  | unique gdrive file id for the flashnote file
+Title                               | Extracted subject title of flashnote file
+PricePrediction                     | predicted price from BLP model
+Ticker                              | extracted api_full_ticker of flashnote
+Analyst                             | analyst email address
+NoteType                            | the type of flashnote
+DateTime                            | the processing time of the flashnote file
+ReleaseTimeCategory                 | the category based on its release time (Weekend; MorningSession; OpenAuction; ArvoSession; AfterClose; EarlyMorning; PreOpen; LateNight; blank; null
+Recommendation                      | the extracted trading recommendation 
 RecChange                           |
-Text                                |
-HTMLText                            |
-SourceReference                     |
-AverageNumericalFactor              |
-AverageWordLength                   |
-AverageWordsPerSentence             |
-PositiveSentences                   |
-NegativeSentences                   |
-NeutralSentences                    |
-AverageSentiment                    |
-MedianSentiment                     |
-StdDevSentiment                     |
-ReturnLastDay                       |
-ReturnLastWeek                      |
-ReturnLastMonth                     |
-StdDevLastDay                       |
-StdDevLastWeek                      |
-StdDevLastMonth                     |
-AverageDailyTurnover                |
-Broker                              |
-ReturnToday                         |
-Return10Mins                        |
-Return30Mins                        |
-ReturnOneHour                       |
-ReturnToClose                       |
-ReturnToNextClose                   |
-ReturnToNextOpen                    |
-ReturnTwoHours                      |
-DaysSinceLast                       |
-DaysSinceLastByBroker               |
-AdjustedSentiment                   |
+Text                                | the extracted text string from html file body of flashnote
+HTMLText                            | html-content body of flashnote
+SourceReference                     | 'Broker_Ticker_DateTime'
+AverageNumericalFactor              | the avg_numerical_factor result from BLP model of the flashnote
+AverageWordLength                   | the avg_word_length result from BLP model of the flashnote
+AverageWordsPerSentence             | the avg_word_per_sentence result from BLP model of the flashnote
+PositiveSentences                   | the positive_num result from BLP model of the flashnote
+NegativeSentences                   | the negative_num result from BLP model of the flashnote
+NeutralSentences                    | the neutral_num result from BLP model of the flashnote
+AverageSentiment                    | the average sentiment score of ??? (api_full_ticker?)
+MedianSentiment                     | the median sentiment score of ??? (api_full_ticker?)
+StdDevSentiment                     | the standard deviation of sentiment score of ??? (api_full_ticker?)
+ReturnLastDay                       | the return_last_day result from BLP model of the flashnote
+ReturnLastWeek                      | the return_last_week result from BLP model of the flashnote
+ReturnLastMonth                     | the return_last_week result from BLP model of the flashnote
+StdDevLastDay                       | the std_dev_last_day result from BLP model of the flashnote
+StdDevLastWeek                      | the std_dev_last_week result from BLP model of the flashnote
+StdDevLastMonth                     | the std_dev_last_month result from BLP model of the flashnote
+AverageDailyTurnover                | the avg_daily_turnover result from BLP model of the flashnote
+Broker                              | the broker caterogy (company) of flashnote
+ReturnToday                         | Price prediction of the stock being mentioned in the next 10 minutes
+Return10Mins                        | Price prediction of the stock being mentioned in the next 10 minutes
+Return30Mins                        | Price prediction of the stock being mentioned in the next 30 minutes
+ReturnOneHour                       | Price prediction of the stock being mentioned in the next 1 hour
+ReturnToClose                       | Price prediction of the stock being mentioned in next close
+ReturnToNextClose                   | Price prediction of the stock being mentioned in tomorrow close
+ReturnToNextOpen                    | Price prediction of the stock being mentioned in the next open
+ReturnTwoHours                      | Price prediction of the stock being mentioned in the next 2 hour
+DaysSinceLast                       | How many days since this stock has been mentioned in another flash note
+DaysSinceLastByBroker               | How many days since this stock has been mentioned in another flash note which has been sent
+AdjustedSentiment                   | Overall sentiment score for the document, which has been normalized by its length
 
 ### UnprocessedFlashnoteFromGDrive
 
